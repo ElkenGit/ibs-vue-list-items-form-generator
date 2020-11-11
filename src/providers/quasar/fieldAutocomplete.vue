@@ -1,0 +1,43 @@
+<template>
+  <q-select
+      ref="salesCountrySelector"
+      v-model="fieldValue"
+      options-dense
+      dense
+      use-input
+      map-options
+      outlined
+      hide-bottom-space
+      clearable
+      :label="label"
+      :options="list"
+      @filter="search"
+      @input="selected"
+  />
+</template>
+<script>
+import baseMixin from './baseMixin'
+export default {
+  mixins: [baseMixin],
+  data() {
+    return {
+      list: []
+    }
+  },
+  methods: {
+    search(terms, update) {
+      let field = {...this.field}
+      field = {...field, ...{ input: terms, isAutofill: true }}
+      this.$store.dispatch('list-items-form-generator/getFieldDependentDataAction', field).then(() => {
+        update(() => {
+          let options = this.$store.getters['list-items-form-generator/getAutofillOptions'](this.field.key_path)
+          this.list = [...options]
+        })
+      })
+    },
+    selected(item) {
+      this.fieldValue = item.value
+    }
+  }
+}
+</script>

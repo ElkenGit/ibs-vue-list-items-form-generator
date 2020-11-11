@@ -1,0 +1,610 @@
+{
+  "data": [
+    {
+      "id": 2,
+      "key": "receipt_transaction_type",
+      "id_key": "receipt_transaction_type_id",
+      "field_type": "list",
+      "name": "Receipt Transection Type",
+      "key_path": "receipt.receipt_transaction_type",
+      "options": [
+        {
+          "id": 3,
+          "key": "GT",
+          "name": "Other Receipt GST",
+          "key_path": "receipt.receipt_transaction_type.GT",
+          "_actions": [
+            {
+              "method": "get",
+              "url": "https://nibsdev-be.elken.com/api/v1/list-items/lookup/receipt/4?country=1&location=1&location_type=1&index=1&root_item_id=4&root_item_key=category&root_item_name=GT+Category&key_path=receipt.receipt_transaction_type.GT.category",
+              "on": "select"
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "key": "KO",
+          "name": "Knock Off Receipt",
+          "key_path": "receipt.receipt_transaction_type.KO",
+          "_actions": [
+            {
+              "method": "get",
+              "url": "https://nibsdev-be.elken.com/api/v1/list-items/lookup/receipt/empty?country=1&location=1&location_type=1&index=1&root_item_id=4&root_item_key=category&root_item_name=GT+Category&key_path=receipt.receipt_transaction_type.GT.category",
+              "on": "select"
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "key": "OT",
+          "name": "Other Receipt",
+          "key_path": "receipt.receipt_transaction_type.OT",
+          "_actions": [
+            {
+              "method": "get",
+              "url": "https://nibsdev-be.elken.com/api/v1/list-items/lookup/receipt/24?country=1&location=1&location_type=1&index=1&root_item_id=4&root_item_key=category&root_item_name=GT+Category&key_path=receipt.receipt_transaction_type.GT.category",
+              "on": "select"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "key": "category",
+      "id_key": "category_id",
+      "field_type": "list",
+      "name": "GT Category",
+      "key_path": "receipt.receipt_transaction_type.GT.category",
+      "options": [
+        {
+          "id": 5,
+          "key": "BB",
+          "name": "PRODUCT RETURN BILLING",
+          "key_path": "receipt.receipt_transaction_type.GT.category.BB"
+        },
+        {
+          "id": 6,
+          "key": "BL",
+          "name": "BIOSAFE LOAN",
+          "key_path": "receipt.receipt_transaction_type.GT.category.BL"
+        },
+        {
+          "id": 7,
+          "key": "CC",
+          "name": "COURIER CHARGES",
+          "key_path": "receipt.receipt_transaction_type.GT.category.CC"
+        },
+        {
+          "id": 8,
+          "key": "DA",
+          "name": "DISPOSAL OF ASSETS",
+          "key_path": "receipt.receipt_transaction_type.GT.category.DA"
+        },
+        {
+          "id": 9,
+          "key": "EB",
+          "name": "ETERNAL BEAUTY RENTAL",
+          "key_path": "receipt.receipt_transaction_type.GT.category.EB"
+        },
+        {
+          "id": 10,
+          "key": "FT",
+          "name": "FUNCTION TICKET",
+          "key_path": "receipt.receipt_transaction_type.GT.category.FT"
+        },
+        {
+          "id": 11,
+          "key": "KC",
+          "name": "KARADA SCAN RENTAL",
+          "key_path": "receipt.receipt_transaction_type.GT.category.KC"
+        },
+        {
+          "id": 12,
+          "key": "LR",
+          "name": "LINGERIE RENTAL &amp; REPAIR",
+          "key_path": "receipt.receipt_transaction_type.GT.category.LR"
+        },
+        {
+          "id": 13,
+          "key": "MP",
+          "name": "SALES OF MPAY CARD",
+          "key_path": "receipt.receipt_transaction_type.GT.category.MP"
+        },
+        {
+          "id": 14,
+          "key": "PL",
+          "name": "PRINTING AND LISTING",
+          "key_path": "receipt.receipt_transaction_type.GT.category.PL"
+        },
+        {
+          "id": 15,
+          "key": "RE",
+          "name": "EK CLUB RENEWAL FEE",
+          "key_path": "receipt.receipt_transaction_type.GT.category.RE"
+        },
+        {
+          "id": 16,
+          "key": "SC",
+          "name": "LOST OF STAFF CARD",
+          "key_path": "receipt.receipt_transaction_type.GT.category.SC"
+        },
+        {
+          "id": 17,
+          "key": "SL",
+          "name": "SALES WITHOUT BV / SV",
+          "key_path": "receipt.receipt_transaction_type.GT.category.SL"
+        },
+        {
+          "id": 18,
+          "key": "TC",
+          "name": "Termination charges",
+          "key_path": "receipt.receipt_transaction_type.GT.category.TC"
+        },
+        {
+          "id": 19,
+          "key": "TD",
+          "name": "TENDER FEE",
+          "key_path": "receipt.receipt_transaction_type.GT.category.TD"
+        },
+        {
+          "id": 20,
+          "key": "TF",
+          "name": "TRAVELLING FUND TOP UP",
+          "key_path": "receipt.receipt_transaction_type.GT.category.TF"
+        },
+        {
+          "id": 21,
+          "key": "EKSGPI",
+          "name": "Debt Collection",
+          "key_path": "receipt.receipt_transaction_type.GT.category.EKSGPI"
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "key": "function",
+      "id_key": "function_id",
+      "field_type": "list",
+      "name": "Function",
+      "key_path": "receipt.function",
+      "options": [
+        {
+          "id": 40,
+          "key": "AC3S",
+          "name": "SELLING, SPONSORSHIP & SERVICE",
+          "key_path": "receipt.function.AC3S",
+          "_actions": [
+            {
+              "method": "get",
+              "url": "https://nibsdev-be.elken.com/api/v1/list-items/lookup/receipt/41?country=1&location=1&location_type=1&index=3&root_item_id=41&root_item_key=cost_center&root_item_name=Cost+Center&key_path=receipt.function.AC3S.cost_center",
+              "on": "select"
+            }
+          ]
+        },
+        {
+          "id": 42,
+          "key": "ACBGT",
+          "name": "BASIC GUASA TRAINING",
+          "key_path": "receipt.function.ACBGT",
+          "_actions": [
+            {
+              "method": "get",
+              "url": "https://nibsdev-be.elken.com/api/v1/list-items/lookup/receipt/43?country=1&location=1&location_type=1&index=3&root_item_id=41&root_item_key=cost_center&root_item_name=Cost+Center&key_path=receipt.function.AC3S.cost_center",
+              "on": "select"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "key": "cost_center",
+      "id_key": "cost_center_id",
+      "field_type": "list",
+      "name": "Cost Center",
+      "key_path": "receipt.function.AC3S.cost_center",
+      "options": [
+        {
+          "id": 217,
+          "key": "market_development",
+          "name": "MARKET DEVELOPMENT",
+          "key_path": "receipt.function.AC3S.cost_center.market_development"
+        },
+        {
+          "id": 218,
+          "key": "msp_ei_countries",
+          "name": "MSP - EI COUNTRIES",
+          "key_path": "receipt.function.AC3S.cost_center.msp_ei_countries"
+        },
+        {
+          "id": 219,
+          "key": "innovation_and_growth",
+          "name": "INNOVATION AND GROWTH",
+          "key_path": "receipt.function.AC3S.cost_center.innovation_and_growth"
+        },
+        {
+          "id": 220,
+          "key": "operations",
+          "name": "OPERATIONS",
+          "key_path": "receipt.function.AC3S.cost_center.operations"
+        },
+        {
+          "id": 221,
+          "key": "administration",
+          "name": "ADMINISTRATION",
+          "key_path": "receipt.function.AC3S.cost_center.administration"
+        },
+        {
+          "id": 222,
+          "key": "customer_service",
+          "name": "CUSTOMER SERVICE",
+          "key_path": "receipt.function.AC3S.cost_center.customer_service"
+        },
+        {
+          "id": 223,
+          "key": "distribution_logistics",
+          "name": "DISTRIBUTION & LOGISTICS",
+          "key_path": "receipt.function.AC3S.cost_center.distribution_logistics"
+        },
+        {
+          "id": 224,
+          "key": "outbound_call_centre",
+          "name": "OUTBOUND CALL CENTRE",
+          "key_path": "receipt.function.AC3S.cost_center.outbound_call_centre"
+        },
+        {
+          "id": 225,
+          "key": "planning_procurement",
+          "name": "PLANNING & PROCUREMENT",
+          "key_path": "receipt.function.AC3S.cost_center.planning_procurement"
+        },
+        {
+          "id": 226,
+          "key": "quality_management",
+          "name": "QUALITY MANAGEMENT",
+          "key_path": "receipt.function.AC3S.cost_center.quality_management"
+        },
+        {
+          "id": 227,
+          "key": "sales_operations_support",
+          "name": "SALES OPERATIONS SUPPORT",
+          "key_path": "receipt.function.AC3S.cost_center.sales_operations_support"
+        },
+        {
+          "id": 228,
+          "key": "stockist",
+          "name": "STOCKIST",
+          "key_path": "receipt.function.AC3S.cost_center.stockist"
+        },
+        {
+          "id": 229,
+          "key": "product_research_and_development",
+          "name": "PRODUCT RESEARCH AND DEVELOPMENT",
+          "key_path": "receipt.function.AC3S.cost_center.product_research_and_development"
+        },
+        {
+          "id": 230,
+          "key": "pdd_beauty",
+          "name": "PDD - BEAUTY",
+          "key_path": "receipt.function.AC3S.cost_center.pdd_beauty"
+        },
+        {
+          "id": 231,
+          "key": "pdd_fmcg",
+          "name": "PDD - FMCG",
+          "key_path": "receipt.function.AC3S.cost_center.pdd_fmcg"
+        },
+        {
+          "id": 232,
+          "key": "pdd_health_food",
+          "name": "PDD - HEALTH FOOD",
+          "key_path": "receipt.function.AC3S.cost_center.pdd_health_food"
+        },
+        {
+          "id": 233,
+          "key": "pdd_regulatory_affairs",
+          "name": "PDD - REGULATORY AFFAIRS",
+          "key_path": "receipt.function.AC3S.cost_center.pdd_regulatory_affairs"
+        },
+        {
+          "id": 234,
+          "key": "pdd_research",
+          "name": "PDD - RESEARCH",
+          "key_path": "receipt.function.AC3S.cost_center.pdd_research"
+        },
+        {
+          "id": 235,
+          "key": "sales",
+          "name": "SALES",
+          "key_path": "receipt.function.AC3S.cost_center.sales"
+        },
+        {
+          "id": 236,
+          "key": "global_office",
+          "name": "GLOBAL OFFICE",
+          "key_path": "receipt.function.AC3S.cost_center.global_office"
+        },
+        {
+          "id": 237,
+          "key": "network_sales",
+          "name": "NETWORK SALES",
+          "key_path": "receipt.function.AC3S.cost_center.network_sales"
+        },
+        {
+          "id": 238,
+          "key": "product_sales",
+          "name": "PRODUCT SALES",
+          "key_path": "receipt.function.AC3S.cost_center.product_sales"
+        },
+        {
+          "id": 239,
+          "key": "network_events_travel",
+          "name": "NETWORK EVENTS & TRAVEL",
+          "key_path": "receipt.function.AC3S.cost_center.network_events_travel"
+        },
+        {
+          "id": 240,
+          "key": "spa",
+          "name": "SPA",
+          "key_path": "receipt.function.AC3S.cost_center.spa"
+        },
+        {
+          "id": 241,
+          "key": "trading",
+          "name": "TRADING",
+          "key_path": "receipt.function.AC3S.cost_center.trading"
+        },
+        {
+          "id": 242,
+          "key": "fleet_management",
+          "name": "FLEET MANAGEMENT",
+          "key_path": "receipt.function.AC3S.cost_center.fleet_management"
+        },
+        {
+          "id": 243,
+          "key": "technical_sales",
+          "name": "TECHNICAL & SALES",
+          "key_path": "receipt.function.AC3S.cost_center.technical_sales"
+        },
+        {
+          "id": 244,
+          "key": "strategic_biz_development",
+          "name": "STRATEGIC BIZ DEVELOPMENT",
+          "key_path": "receipt.function.AC3S.cost_center.strategic_biz_development"
+        },
+        {
+          "id": 245,
+          "key": "branches",
+          "name": "BRANCHES",
+          "key_path": "receipt.function.AC3S.cost_center.branches"
+        },
+        {
+          "id": 246,
+          "key": "ipoh_branch",
+          "name": "IPOH BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.ipoh_branch"
+        },
+        {
+          "id": 247,
+          "key": "johor_bahru_branch",
+          "name": "JOHOR BAHRU BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.johor_bahru_branch"
+        },
+        {
+          "id": 248,
+          "key": "kota_bahru_branch",
+          "name": "KOTA BAHRU BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.kota_bahru_branch"
+        },
+        {
+          "id": 249,
+          "key": "kota_kinabalu_branch",
+          "name": "KOTA KINABALU BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.kota_kinabalu_branch"
+        },
+        {
+          "id": 250,
+          "key": "kuantan_branch",
+          "name": "KUANTAN BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.kuantan_branch"
+        },
+        {
+          "id": 251,
+          "key": "kuching_branch",
+          "name": "KUCHING BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.kuching_branch"
+        },
+        {
+          "id": 252,
+          "key": "penang_branch",
+          "name": "PENANG BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.penang_branch"
+        },
+        {
+          "id": 253,
+          "key": "seberang_jaya_branch",
+          "name": "SEBERANG JAYA BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.seberang_jaya_branch"
+        },
+        {
+          "id": 254,
+          "key": "negeri_sembilan",
+          "name": "NEGERI SEMBILAN",
+          "key_path": "receipt.function.AC3S.cost_center.negeri_sembilan"
+        },
+        {
+          "id": 255,
+          "key": "kelantan_branch",
+          "name": "KELANTAN BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.kelantan_branch"
+        },
+        {
+          "id": 256,
+          "key": "miri_branch",
+          "name": "MIRI BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.miri_branch"
+        },
+        {
+          "id": 257,
+          "key": "sibu_branch",
+          "name": "SIBU BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.sibu_branch"
+        },
+        {
+          "id": 258,
+          "key": "melaka_branch",
+          "name": "MELAKA BRANCH",
+          "key_path": "receipt.function.AC3S.cost_center.melaka_branch"
+        },
+        {
+          "id": 259,
+          "key": "support_functions",
+          "name": "SUPPORT FUNCTIONS",
+          "key_path": "receipt.function.AC3S.cost_center.support_functions"
+        },
+        {
+          "id": 260,
+          "key": "accounts_finance",
+          "name": "ACCOUNTS & FINANCE",
+          "key_path": "receipt.function.AC3S.cost_center.accounts_finance"
+        },
+        {
+          "id": 261,
+          "key": "human_resources",
+          "name": "HUMAN RESOURCES",
+          "key_path": "receipt.function.AC3S.cost_center.human_resources"
+        },
+        {
+          "id": 262,
+          "key": "internal_audit",
+          "name": "INTERNAL AUDIT",
+          "key_path": "receipt.function.AC3S.cost_center.internal_audit"
+        },
+        {
+          "id": 263,
+          "key": "group_it",
+          "name": "GROUP IT",
+          "key_path": "receipt.function.AC3S.cost_center.group_it"
+        },
+        {
+          "id": 264,
+          "key": "legal_secretarial",
+          "name": "LEGAL & SECRETARIAL",
+          "key_path": "receipt.function.AC3S.cost_center.legal_secretarial"
+        },
+        {
+          "id": 265,
+          "key": "ha_services",
+          "name": "HA SERVICES",
+          "key_path": "receipt.function.AC3S.cost_center.ha_services"
+        },
+        {
+          "id": 266,
+          "key": "project",
+          "name": "PROJECT",
+          "key_path": "receipt.function.AC3S.cost_center.project"
+        },
+        {
+          "id": 267,
+          "key": "properties_projects_management",
+          "name": "PROPERTIES & PROJECTS MANAGEMENT",
+          "key_path": "receipt.function.AC3S.cost_center.properties_projects_management"
+        },
+        {
+          "id": 268,
+          "key": "production",
+          "name": "PRODUCTION",
+          "key_path": "receipt.function.AC3S.cost_center.production"
+        },
+        {
+          "id": 269,
+          "key": "production_direct",
+          "name": "PRODUCTION DIRECT",
+          "key_path": "receipt.function.AC3S.cost_center.production_direct"
+        },
+        {
+          "id": 270,
+          "key": "production_indirect",
+          "name": "PRODUCTION INDIRECT",
+          "key_path": "receipt.function.AC3S.cost_center.production_indirect"
+        },
+        {
+          "id": 271,
+          "key": "engineering",
+          "name": "ENGINEERING",
+          "key_path": "receipt.function.AC3S.cost_center.engineering"
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "key": "receipt_type",
+      "id_key": "receipt_type_id",
+      "field_type": "list",
+      "name": "Receipt Type",
+      "key_path": "receipt.receipt_type",
+      "options": [
+        {
+          "id": 45,
+          "key": "member",
+          "name": "Member",
+          "key_path": "receipt.receipt_type.member",
+          "_actions": [
+            {
+              "method": "get",
+              "url": "https://nibsdev-be.elken.com/api/v1/list-items/lookup/receipt/46?country=1&location=1&location_type=1&index=5&root_item_id=46&root_item_key=member&root_item_name=Member&key_path=receipt.receipt_type.member.member",
+              "on": "select"
+            }
+          ]
+        },
+        {
+          "id": 47,
+          "key": "non_member",
+          "name": "Non Member",
+          "key_path": "receipt.receipt_type.non_member",
+          "_actions": [
+            {
+              "method": "get",
+              "url": "https://nibsdev-be.elken.com/api/v1/list-items/lookup/receipt/48?country=1&location=1&location_type=1&index=5&root_item_id=46&root_item_key=member&root_item_name=Member&key_path=receipt.receipt_type.member.member",
+              "on": "select"
+            }
+          ]
+        },
+        {
+          "id": 49,
+          "key": "company",
+          "name": "Company",
+          "key_path": "receipt.receipt_type.company",
+          "_actions": [
+            {
+              "method": "get",
+              "url": "https://nibsdev-be.elken.com/api/v1/list-items/lookup/receipt/50?country=1&location=1&location_type=1&index=5&root_item_id=46&root_item_key=member&root_item_name=Member&key_path=receipt.receipt_type.member.member",
+              "on": "select"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "key": "member",
+      "id_key": "member_id",
+      "field_type": "auto-fill",
+      "name": "Member",
+      "key_path": "receipt.receipt_type.member.member",
+      "_actions": [
+        {
+          "method": "get",
+          "url": "https://nibsdev-be.elken.com/api/v1/member-list?sort=id&minimal=1&offset=0&order=desc&is_ba_only=1&country_id=1&limit=10&search_text={input}",
+          "on": "input",
+          "min": 3,
+          "pluck": {
+            "value": "ibo_name",
+            "key": "user_id"
+          }
+        }
+      ]
+    }
+  ]
+}
