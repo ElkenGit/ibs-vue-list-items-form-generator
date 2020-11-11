@@ -1,0 +1,10 @@
+{
+  "name": "list-items-form-generator",
+  "version": "0.0.1",
+  "description": "Elken List items form generator",
+  "main": "index.js",
+  "repository": "https://github.com/ElkenGit/list-items-form-generator.git",
+  "author": "Mohanrau Francis",
+  "license": "MIT",
+  "private": true
+}
