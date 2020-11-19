@@ -1,6 +1,7 @@
-import { transformFields, transformOptions } from './utils/fieldsTransformer'
+import {transformFields, transformOptions} from './utils/fieldsTransformer'
+import _ from 'lodash'
 
-const listItemsFormGeneratorVuexModule =  {
+const listItemsFormGeneratorVuexModule = {
   namespaced: true,
   state: {
     fields: [],
@@ -8,7 +9,7 @@ const listItemsFormGeneratorVuexModule =  {
   },
   getters: {
     getFields: state => {
-      return state.fields.filter(x => x.type)
+      return state.fields.filter(x => x.type && x.key_path)
     },
     getAutofillOptions: state => key => {
       return state.autofillOptions[key] || []
@@ -16,11 +17,12 @@ const listItemsFormGeneratorVuexModule =  {
   },
   mutations: {
     SET_FIELDS(state, payload) {
-      let { fields, isDependentField = false } = payload.data
-      fields = transformFields(fields || [])
-      if (isDependentField && fields.length > 0) {
-        let fieldExistIndex = state.fields.findIndex(x => x.key_path === fields[0].key_path)
-        if(fieldExistIndex) {
+      let {fields, isDependentField = false} = payload.data
+      fields = transformFields(fields)
+      if (isDependentField) {
+        let newDependentFieldKeyPath = _.get(fields, '[0].key_path') || false
+        let fieldExistIndex = state.fields.findIndex(x => x.key_path === newDependentFieldKeyPath)
+        if (fieldExistIndex !== -1) {
           state.fields.splice(fieldExistIndex, 1, fields[0])
         }
       } else {
@@ -28,7 +30,7 @@ const listItemsFormGeneratorVuexModule =  {
       }
     },
     SET_AUTOFILL_OPTIONS(state, payload) {
-      state.autofillOptions = { [payload.data.key]: payload.data.items }
+      state.autofillOptions = {[payload.data.key]: payload.data.items}
     },
   },
   actions: {
@@ -38,7 +40,7 @@ const listItemsFormGeneratorVuexModule =  {
         data: {
           fields: payload
         }
-      });
+      })
     },
     getFieldDependentDataAction(context, payload = {}) {
       return new Promise(resolve => {
@@ -54,7 +56,7 @@ const listItemsFormGeneratorVuexModule =  {
                 method(apiUrl).then(response => {
                   const json = response.data.data
                   if (isAutofill) {
-                    let { pluck } = x
+                    let {pluck} = x
                     // Swapping key value for front-end
                     if (pluck) {
                       pluck = {
@@ -68,7 +70,7 @@ const listItemsFormGeneratorVuexModule =  {
                         key: payload.key_path,
                         items: transformOptions(json, type, pluck)
                       }
-                    });
+                    })
                   } else {
                     context.commit({
                       type: 'SET_FIELDS',
@@ -76,7 +78,7 @@ const listItemsFormGeneratorVuexModule =  {
                         isDependentField: true,
                         fields: [json]
                       }
-                    });
+                    })
                   }
                   resolve(response)
                 })
@@ -85,7 +87,7 @@ const listItemsFormGeneratorVuexModule =  {
           }
         }
       })
-     },
+    },
   }
-};
-export default listItemsFormGeneratorVuexModule;
+}
+export default listItemsFormGeneratorVuexModule
