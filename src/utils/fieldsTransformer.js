@@ -49,5 +49,5 @@ function getMapping (key) {
     ['text', {'options': {'tag': 'input'}}],
     ['auto-fill', {'options': {'tag': 'autocomplete'}}],
   ])
-  return map.get(key)
+  return map.get(key) || false
 }
