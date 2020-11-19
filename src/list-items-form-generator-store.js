@@ -18,7 +18,7 @@ const listItemsFormGeneratorVuexModule =  {
     SET_FIELDS(state, payload) {
       let { fields, isDependentField = false } = payload.data
       fields = transformFields(fields || [])
-      if (isDependentField) {
+      if (isDependentField && fields.length > 0) {
         let fieldExistIndex = state.fields.findIndex(x => x.key_path === fields[0].key_path)
         if(fieldExistIndex) {
           state.fields.splice(fieldExistIndex, 1, fields[0])
