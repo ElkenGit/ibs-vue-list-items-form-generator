@@ -1,5 +1,4 @@
-import { transformFields, transformOptions } from './util/fieldsTransformer'
-import _ from 'lodash'
+import { transformFields, transformOptions } from './utils/fieldsTransformer'
 
 const listItemsFormGeneratorVuexModule =  {
   namespaced: true,

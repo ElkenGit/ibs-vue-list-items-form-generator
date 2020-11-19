@@ -1,15 +1,14 @@
 <template>
   <div :class="wrapperClasses">
+    <slot name="top-fields"></slot>
     <template v-for="field in getFields">
-      <slot name="top-fields"></slot>
       <component v-model="models[field.id_key]" :field="field" :label="field.name" :class="fieldClasses" :is="`field-${field.type}`"></component>
-      <slot name="bottom-fields"></slot>
     </template>
+    <slot name="bottom-fields"></slot>
   </div>
 </template>
 <script>
-import fieldComponents from './util/fieldsLoader'
-import fields from './data.json'
+import fieldComponents from './utils/fieldsLoader'
 
 export default {
   name: 'ListItemFormGenerator',
@@ -60,7 +59,7 @@ export default {
     }
   },
   mounted() {
-    this.$store.dispatch('list-items-form-generator/getFieldsAction', fields.data)
+    this.$store.dispatch('list-items-form-generator/getFieldsAction', this.fields)
   },
 }
 </script>
