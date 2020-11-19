@@ -1,12 +1,12 @@
 {
-  "name": "ibs-list-items-form-generator",
+  "name": "ibs-vue-list-items-form-generator",
   "version": "0.0.1",
-  "description": "Elken List items form generator",
+  "description": "IBS Vue List items form generator",
   "main": "src/index.js",
   "repository": "https://github.com/ElkenGit/ibs-list-items-form-generator.git",
   "author": "Mohanrau Francis",
   "license": "MIT",
-  "private": true,
+  "private": false,
   "dependencies": {
     "lodash": "^4.17.20"
   }

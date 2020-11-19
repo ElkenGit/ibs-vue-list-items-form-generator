@@ -1,7 +1,9 @@
 <template>
   <div :class="wrapperClasses">
     <template v-for="field in getFields">
+      <slot name="top-fields"></slot>
       <component v-model="models[field.id_key]" :field="field" :label="field.name" :class="fieldClasses" :is="`field-${field.type}`"></component>
+      <slot name="bottom-fields"></slot>
     </template>
   </div>
 </template>
