@@ -34,6 +34,13 @@ export default {
     }
   },
   watch: {
+    fields: {
+      handler(to) {
+        this.$store.dispatch('list-items-form-generator/getFieldsAction', to)
+      },
+      deep: true,
+      immediate: true
+    },
     models: {
       handler(to) {
         this.$emit('input', to)
@@ -57,9 +64,6 @@ export default {
     getFields() {
       return this.$store.getters['list-items-form-generator/getFields']
     }
-  },
-  mounted() {
-    this.$store.dispatch('list-items-form-generator/getFieldsAction', this.fields)
   },
 }
 </script>
