@@ -6,6 +6,7 @@
       outlined
       clearable
       :label="label"
+      :class="{ 'required': field.required }"
   />
 </template>
 <script>
