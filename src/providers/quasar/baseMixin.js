@@ -20,6 +20,8 @@ export default {
       handler() {
         if(this.getOptions.length > 0) {
           this.fieldValue = this.getOptions[0].value || null
+        } else {
+          this.fieldValue = null
         }
       },
       deep: true,
