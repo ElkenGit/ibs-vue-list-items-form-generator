@@ -2,7 +2,7 @@
   <div :class="wrapperClasses">
     <slot name="top-fields"></slot>
     <template v-for="field in getFields">
-      <component v-model="models[field.id_key]" :field="field" :label="field.name" :class="fieldClasses" :is="`field-${field.type}`"></component>
+      <component v-model="models[field.id_key]" :field="field" :label="field.name" :class="[fieldClasses]" :is="`field-${field.type}`"></component>
     </template>
   </div>
 </template>

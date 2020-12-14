@@ -14,7 +14,8 @@ export function transformFields(data = []) {
           id: x.id,
           type: field.options.tag,
           options: x.options ? transformOptions(x.options, mappings) : [],
-          actions: x['_actions'] || []
+          actions: x['_actions'] || [],
+          required: x.required
         })
       }
     })

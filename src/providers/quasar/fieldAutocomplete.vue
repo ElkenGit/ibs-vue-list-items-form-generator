@@ -54,7 +54,11 @@ export default {
       })
     },
     selected(item) {
-      this.fieldValue = item.value
+      if(item) {
+        this.fieldValue = item.value
+      } else {
+        this.fieldValue = null
+      }
     }
   }
 }
