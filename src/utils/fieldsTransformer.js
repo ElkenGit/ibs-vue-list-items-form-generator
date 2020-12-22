@@ -49,6 +49,7 @@ function getMapping (key) {
     ['list', {'options': {'tag': 'select', 'mappings': _.get(window.config,`selectedProvider.fields.mappings.select`) || null}}],
     ['text', {'options': {'tag': 'input'}}],
     ['auto-fill', {'options': {'tag': 'autocomplete'}}],
+    ['date', {'options': {'tag': 'date'}}],
   ])
   return map.get(key) || false
 }
