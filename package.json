@@ -1,6 +1,6 @@
 {
   "name": "ibs-vue-list-items-form-generator",
-  "version": "1.0.0-alpha",
+  "version": "1.1.0-alpha",
   "description": "IBS Vue List items form generator",
   "main": "src/index.js",
   "repository": "https://github.com/ElkenGit/ibs-list-items-form-generator.git",
